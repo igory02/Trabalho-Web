@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igor Y - Portfólio Online</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+        /* Feita uma pequena parte do css no html para tornar os conteúdos para cada menu escondido, onde exibirá apenas a opção escolhida */
+        section {
+            display: none;
+        }
+        section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body style="background-image: url('Imagens/fundo-index.jpeg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+    
+    <header>
+        <h1>Bem-vindo(a)</h1>
+    </header>
+    <nav> <!--  Menu's em questão que leva as sessões selecionadas -->
+        <a href="#" onclick="showSection('sobre-mim')">Sobre Mim</a>
+        <a href="#" onclick="showSection('formacao')">Formação Educacional</a>
+        <a href="#" onclick="showSection('portfolio')">Portfólio</a>
+        <a href="#" onclick="showSection('contato')">Contato</a>
+    </nav>
+    
+    <section id="sobre-mim"> <!-- Determinado alguns id's para auxiliar na estilização pelo CSS e também posto o conteúdo em cada sessão -->
+        <h2>Sobre Mim</h2>
+        <p>Olá! Meu nome é Igor. No momento trabalho com atendimento ao público e faço a faculdade de análise e desenvolvimento de sistemas, pretendo desenvolver-me na área de TI e também de Design digital, pois ambos posso considerar hobbies e áreas de interesse minhas.</p>
+    </section>
+    <section id="formacao">
+        <h2>Formação Educacional/ Profissional</h2>
+        <p>No momento estou me formando no tecnólogo de Análise e Desenvolvimento de Sistemas na UNINTER. Também fiz cursos adicionais em referentes a informática e design, quanto ao lado profissional propriamente dito, possuo experiência até o momento na área de telemarketing e na venda de imagens para estabelecimentos.</p>
+    </section>
+    <section id="portfolio">
+        <h2>Portfólio</h2>
+        <p>Projetos ao qual desenvolvi até o momento:</p>
+        <ul>
+            <li><a href="#projeto1" target="_blank">Este Projeto</a></li>  
+        </ul>
+    </section>
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Você pode entrar em contato comigo através de:</p>
+        <ul>
+            <li>Email: <a href="mailto:igoryslai23@outlook.com">igoryslai23@outlook.com</a></li>
+            <li>Telefone: (83) 98738-4966</li>
+            <li>Instagram: <a href="https://www.instagram.com/igg0_02/" target="_blank">Meu Instagram</a></li>
+        </ul>
+    </section>
+    
+    <footer> <!-- Rodapé -->
+        <p>&copy; 2024 Igor Y. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Pequeno código em JS para a função de esconder os conteúdos não ativos, escondento todos eles, mostrando o que foi selecionado e também definindo que ao iniciar a página deve se abrir o "sobre mim"
+        function showSection(sectionId) {
+
+            const sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+        
+        window.onload = function() {
+            showSection('sobre-mim');
+        };
+    </script>
+</body>
+</html>
